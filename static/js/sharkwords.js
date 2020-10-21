@@ -44,6 +44,9 @@ const disableLetterButton = (buttonEl) => {
 //
 const isLetterInWord = (letter) => {
   // Replace this with your code
+   const divsWithLetter = $(`.${letter}`)
+   console.log(divsWithLetter)
+   return divsWithLetter[0] === undefined
 };
 
 
