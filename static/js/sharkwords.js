@@ -46,7 +46,8 @@ const isLetterInWord = (letter) => {
   // Replace this with your code
    const divsWithLetter = $(`.${letter}`)
    console.log(divsWithLetter)
-   return divsWithLetter[0] === undefined
+   console.log(divsWithLetter[0] === undefined)
+   return divsWithLetter[0] !== undefined
 };
 
 
@@ -54,6 +55,9 @@ const isLetterInWord = (letter) => {
 //
 const handleCorrectGuess = (letter) => {
   // Replace this with your code
+  $(`.${letter}`).html(letter);
+  console.log($(`.${letter}`))
+  console.log('correct guess')
 };
 
 
@@ -64,6 +68,13 @@ const handleCorrectGuess = (letter) => {
 //
 const handleWrongGuess = () => {
   // Replace this with your code
+  if (numWrong == 5) {
+    $('button').attr('disabled', true);
+    $('a').show();
+  } else {
+    numWrong += 1;
+    $('img').attr('src', `/static/images/guess${numWrong}.png`)
+  }
 };
 
 
